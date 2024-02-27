@@ -1,0 +1,215 @@
+:root {
+  --primary-color: #e31e24;
+  --secondary-color: #264796;
+  --warning-color: #ffe003;
+  --success-color: #25db0f;
+  --tarnation: 0.2s ease-in-out;
+}
+
+/* COSTUME CSS  */
+
+.dot {
+  height: 17px;
+  width: 17px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid var(--secondary-color);
+  display: inline-block;
+  position: absolute;
+  top: -5px;
+  left: -9px;
+}
+
+.department-card {
+  cursor: pointer;
+  transition: var(--tarnation);
+}
+
+.department-card:hover{
+  scale: 1.03;
+}
+
+.department-card:active{
+  scale: 1;
+}
+
+.dot2 {
+  height: 50%;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  border: 2px solid var(--secondary-color);
+  display: inline-block;
+}
+
+.margin-none {
+  margin: 0;
+}
+
+.color-primary {
+  color: #e31e24;
+}
+
+.color-secondary {
+  color: #264796;
+}
+
+.navLink {
+  color: var(--secondary-color) !important;
+  text-decoration: none;
+  transition: var(--tarnation);
+}
+
+.MuiAccordionSummary-content {
+  margin: 0 !important;
+}
+
+.navLink.active {
+  color: var(--primary-color);
+}
+
+.navLink:hover {
+  color: var(--primary-color) !important;
+}
+
+.smooth-shadow {
+  box-shadow: 0px 0px 13px rgb(245 245 245) !important;
+}
+.smooth-shadow-card {
+  box-shadow: -3px 3px 10px rgb(245 245 245) !important;
+}
+
+/* Bootstrap Css Edit */
+
+.navbar {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 3% !important;
+}
+
+.navbar-toggler {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.nav-link {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: var(--secondary-color) !important;
+  transition: var(--tarnation);
+  text-transform: uppercase !important;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+.dropdown-menu {
+  font-size: 0.9rem !important;
+  border: none !important;
+  text-transform: uppercase !important;
+  padding: 0.25rem 0.5rem !important;
+}
+
+.accordion-body {
+  padding: 0.25rem 0.5rem !important;
+  text-transform: uppercase !important;
+  border-left: 2px solid var(--secondary-color);
+  background: url("");
+}
+
+.accordion-button {
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  color: var(--secondary-color) !important;
+  transition: var(--tarnation);
+  text-transform: uppercase !important;
+  padding: 0.25rem 0rem !important;
+}
+.accordion-button:hover {
+  color: var(--primary-color) !important;
+}
+
+.accordion-button.collapsed {
+  padding: 0.25rem 0rem !important;
+  background-color: transparent;
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--bs-accordion-active-color);
+  background-color: transparent !important;
+}
+
+.accordion-button:focus {
+  box-shadow: none !important;
+  padding: 0.25rem 0.1rem !important;
+}
+
+.dropdown-item {
+  font-weight: 500 !important;
+  color: var(--secondary-color) !important;
+  transition: var(--tarnation);
+  text-transform: uppercase !important;
+  padding: 0.25rem 0.1rem !important;
+}
+
+.dropdown-item:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Banner  */
+
+.banner-heading {
+  font-size: clamp(2.5rem, 9vw, 4.5rem) !important;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.banner-text {
+  font-size: clamp(1rem, 3vw, 1.3rem) !important;
+  font-weight: 500;
+}
+
+/* About  */
+.about-heading {
+  font-size: clamp(2.5rem, 9vw, 3rem) !important;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.about-text {
+  font-size: clamp(1.2rem, 3vw, 1.3rem) !important;
+  font-weight: 500 !important;
+}
+
+/* JOURNEY AHEAD SECTION  */
+
+.journey-heading {
+  font-size: clamp(2.5rem, 9vw, 2.7rem) !important;
+}
+
+.journey-heading-2 {
+  font-size: clamp(1.5rem, 10.5vw, 2.7rem) !important;
+}
+
+.journey-card-heading {
+  font-size: clamp(1.25rem, 6vw, 1.4rem) !important;
+}
+
+.journey-text {
+  font-size: clamp(1.2rem, 1vw, 1.3rem) !important;
+  font-weight: 500 !important;
+}
+
+.journey-card {
+  border-bottom: 3px solid #264796;
+  transition: var(--tarnation);
+}
+.journey-card:hover {
+  border-bottom: 5px solid #264796;
+  transform: translateY(-10px);
+}
