@@ -213,3 +213,7 @@
   border-bottom: 5px solid #264796;
   transform: translateY(-10px);
 }
+
+.css-o091hl-MuiFormControlLabel-root .MuiFormControlLabel-label{
+  font-weight: 600;
+}

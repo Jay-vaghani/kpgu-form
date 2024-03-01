@@ -3,6 +3,8 @@ import {
   Autocomplete,
   Box,
   Button,
+  Checkbox,
+  FormControlLabel,
   Grid,
   MenuItem,
   Stack,
@@ -278,7 +280,7 @@ function AdmissionInquiry() {
         name: FormData.name,
         email: FormData.email,
         number: FormData.number,
-        category: FormData.category,
+        category: "Null",
         state: FormData.state,
         city: FormData.city,
         CourseAfterOption: FormData.courseAfter,
@@ -314,7 +316,7 @@ function AdmissionInquiry() {
           className="mb-0 fw-bold color-secondary"
           style={{ textAlign: "center" }}
         >
-          ADMISSION INQUIRY FORM FOR YEAR {year}-{year + 1}
+          ADMISSION INQUIRY FOR YEAR {year}-{year + 1}
         </h1>
       </Box>
       <Box maxWidth={"1440px"} mx={"auto"} borderRadius={4} mt={4}>
@@ -654,7 +656,7 @@ function AdmissionInquiry() {
                       />
                     </Box>
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid item xs={12} display={"none"}>
                     <Box>
                       <TextField
                         color="secondary"
@@ -779,7 +781,7 @@ function AdmissionInquiry() {
                     </Box>
                   </Grid>
                   <Grid item xs={12}>
-                    <Box>
+                    <Box mb={2}>
                       <Autocomplete
                         fullWidth
                         options={courseList}
@@ -810,6 +812,7 @@ function AdmissionInquiry() {
                         name="courseSelected"
                       />
                     </Box>
+                    <h5 className="color-secondary fw-bold "> <FormControlLabel className="fw-bold" required control={<Checkbox />} sx={{fontWeight: 900}} label="I Allow KPGU To Contact Me." /></h5>
                   </Grid>
                   <Grid item xs={12}>
                     <LoadingButton
