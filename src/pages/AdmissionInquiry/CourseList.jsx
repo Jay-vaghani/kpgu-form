@@ -26,9 +26,6 @@ export const Science12th = [
     "B.Sc in Chem. Biotech & Micro - B Group",
     "B.B.A.(Honours)",
     "B.Com (Honours) in Wealth Management & Computerized GST",
-    "B.A. (Honours) in Psychology / Sociology / English / Public Administration / Economics",
-    "Bachelor of Arts in Culinary Arts",
-    "Bachelor of Arts in Journalism and Mass - Communication",
     "Yet To Be Decided",
 ];
 
@@ -37,9 +34,6 @@ export const Commerce12th = [
     "B.B.A.(Honours)",
     "B.Com (Honours)",
     "B.Com (Honours) in Wealth Management & Computerized GST",
-    "B.A. (Honours) in Psychology / Sociology / English / Public Administration / Economics",
-    "Bachelor of Arts in Culinary Arts",
-    "Bachelor of Arts in Journalism and Mass - Communication",
     "Yet To Be Decided",
 ];
 
@@ -48,9 +42,6 @@ export const Arts12th = [
     "B.B.A (Honours)",
     "B.Com (Honours)",
     "B.Com (Honours) in Wealth Management & Computerized GST",
-    "B.A (Honours) in Psychology / Sociology / English / Public Administration / Economics",
-    "Bachelor of Arts in Culinary Arts",
-    "Bachelor of Arts in Journalism and Mass - Communication",
     "Yet To Be Decided",
 ];
 
@@ -86,7 +77,7 @@ export const AfterGraduation = [
     "M.Tech in Electrical Engineering",
     "M.Tech in Information Technology",
     "M.Tech in Mechanical Engineering",
-    "MBA (PG)",
+    "MBA",
     "MBA(HCM & HA)",
     "M.Pharm in Pharmaceutics",
     "M.Pharm in Pharmacology",
