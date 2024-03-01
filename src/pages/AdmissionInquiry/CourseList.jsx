@@ -15,7 +15,6 @@ export const Science12th = [
     "B.Tech in Mechanical Engineering",
     "B.Tech in Electrical Engineering",
     "B.Tech in Food Technology",
-    "B.Tech in Chemical Engineering",
     "B.Tech in Computer Engineering",
     "B. Pharm",
     "Bachelor of Physiotherapy - BPT",
@@ -25,7 +24,7 @@ export const Science12th = [
     "B.Sc in Phy. Chem & Maths - A Group",
     "B.Sc in Chem. Biotech & Micro - B Group",
     "B.B.A.(Honours)",
-    "B.Com (Honours) in Wealth Management & Computerised GST",
+    "B.Com (Honours) in Wealth Management & Computerized GST",
     "B.A. (Honours) in Psychology / Sociology / English / Public Administration / Economics",
     "Bachelor of Arts in Culinary Arts",
     "Bachelor of Arts in Journalism and Mass - Communication",
@@ -35,7 +34,7 @@ export const Commerce12th = [
     "GNM",
     "B.B.A.(Honours)",
     "B.Com (Honours)",
-    "B.Com (Honours) in Wealth Management & Computerised GST",
+    "B.Com (Honours) in Wealth Management & Computerized GST",
     "B.A. (Honours) in Psychology / Sociology / English / Public Administration / Economics",
     "Bachelor of Arts in Culinary Arts",
     "Bachelor of Arts in Journalism and Mass - Communication",
@@ -43,9 +42,9 @@ export const Commerce12th = [
 
 export const Arts12th = [
     "GNM",
-    "B.B.A.(Honours)",
+    "B.B.A (Honours)",
     "B.Com (Honours)",
-    "B.Com (Honours) in Wealth Management & Computerised GST",
+    "B.Com (Honours) in Wealth Management & Computerized GST",
     "B.A (Honours) in Psychology / Sociology / English / Public Administration / Economics",
     "Bachelor of Arts in Culinary Arts",
     "Bachelor of Arts in Journalism and Mass - Communication",
@@ -80,11 +79,13 @@ export const AfterGraduation = [
     "M.Tech in Computer Engineering",
     "M.Tech in Electrical Engineering",
     "M.Tech in Information Technology",
+    "M.Tech in Mechanical Engineering",
     "MBA (PG)",
+    "MBA(HCM & HA)",
     "M.Pharm in Pharmaceutics",
     "M.Pharm in Pharmacology",
     "M.Pharm in Pharmaceutical Quality Assurance",
     "M.Pharm in Pharmaceutical Technology",
-    "M.B.A.",
+    "M.Sc."
 ];
 
