@@ -269,7 +269,7 @@ function AdmissionInquiry() {
 
   const form = useForm();
 
-  const { register, handleSubmit, formState, watch, reset, resetField } = form;
+  const { register, handleSubmit, formState, reset } = form;
 
   const { errors } = formState;
 
@@ -654,35 +654,6 @@ function AdmissionInquiry() {
                           },
                         })}
                       />
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12} display={"none"}>
-                    <Box>
-                      <TextField
-                        color="secondary"
-                        fullWidth
-                        label="Student Category"
-                        select
-                        variant="filled"
-                        value={watch("category") || ""}
-                        id="category"
-                        helperText={
-                          errors.category ? errors.category.message : false
-                        }
-                        error={errors.category ? true : false}
-                        {...register("category", {
-                          required: {
-                            value: true,
-                            message: "Please Select Your Category",
-                          },
-                        })}
-                      >
-                        {StudentCategory.map((category, index) => (
-                          <MenuItem value={category} key={index}>
-                            {category}
-                          </MenuItem>
-                        ))}
-                      </TextField>
                     </Box>
                   </Grid>
                   <Grid item xs={12} sm={6}>

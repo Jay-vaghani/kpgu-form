@@ -6,6 +6,7 @@ export const After10th = [
     "Diploma in Electrical Engineering",
     "Diploma in Computer Engineering",
     "Diploma in Chemical Engineering",
+    "Yet To Be Decided"
 ];
 
 export const Science12th = [
@@ -25,7 +26,7 @@ export const Science12th = [
     "B.Sc in Chem. Biotech & Micro - B Group",
     "B.B.A.(Honours)",
     "B.Com (Honours) in Wealth Management & Computerized GST",
-   
+    "Yet To Be Decided"
 ];
 
 export const Commerce12th = [
@@ -33,8 +34,8 @@ export const Commerce12th = [
     "B.B.A.(Honours)",
     "B.Com (Honours)",
     "B.Com (Honours) in Wealth Management & Computerized GST",
-   
-  
+    "Yet To Be Decided"
+
 ];
 
 export const Arts12th = [
@@ -42,7 +43,7 @@ export const Arts12th = [
     "B.B.A (Honours)",
     "B.Com (Honours)",
     "B.Com (Honours) in Wealth Management & Computerized GST",
- 
+    "Yet To Be Decided"
 ];
 
 export const AfterDiplomaEngineeringD2D = [
@@ -52,7 +53,8 @@ export const AfterDiplomaEngineeringD2D = [
     "Diploma to Degree (D2D) Information Technology",
     "Diploma to Degree (D2D) Computer Science & Engineering",
     "Diploma to Degree (D2D) Computer Engineering ",
-    "Diploma to Degree (D2D) Food Technology  ",
+    "Diploma to Degree (D2D) Food Technology",
+    "Yet To Be Decided"
 ];
 
 export const AfterItiC2D = [
@@ -62,6 +64,7 @@ export const AfterItiC2D = [
     "Certificate Course to Diploma (C2D) Information Technology",
     "Certificate Course to Diploma (C2D)  Computer Science & Engineering",
     "Certificate Course to Diploma (C2D)  Chemical Engineering",
+    "Yet To Be Decided"
 ];
 
 export const AfterGraduation = [
@@ -81,6 +84,7 @@ export const AfterGraduation = [
     "M.Pharm in Pharmacology",
     "M.Pharm in Pharmaceutical Quality Assurance",
     "M.Pharm in Pharmaceutical Technology",
-    "M.Sc."
+    "M.Sc.",
+    "Yet To Be Decided"
 ];
 
