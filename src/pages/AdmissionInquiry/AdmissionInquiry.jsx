@@ -783,7 +783,7 @@ function AdmissionInquiry() {
                         name="courseSelected"
                       />
                     </Box>
-                    <h5 className="color-secondary fw-bold "> <FormControlLabel className="fw-bold" required control={<Checkbox />} sx={{fontWeight: 900}} label="I Allow KPGU To Contact Me." /></h5>
+                    <h5 className="color-secondary fw-bold ">I Allow KPGU To Contact Me.</h5>
                   </Grid>
                   <Grid item xs={12}>
                     <LoadingButton
@@ -801,35 +801,6 @@ function AdmissionInquiry() {
                 </Grid>
               </Box>
             </form>
-            <Box
-              mx={"auto"}
-              px={"3%"}
-              py={"2%"}
-              bgcolor={"#fff"}
-              borderRadius={4}
-              className="smooth-shadow"
-              mt={4}
-            >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d236440.11092306007!2d72.88288329453124!3d22.187784800000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc3e15a4fce63%3A0x5f75d8caf42dbaec!2sKPGU%2C%20Vadodara%20(Formerly%20BITS%20Edu%20Campus)!5e0!3m2!1sen!2sin!4v1703494925840!5m2!1sen!2sin"
-                width="100%"
-                height="350px"
-                style={{ borderRadius: "7px" }}
-                allowFullScreen=""
-                loading="eager"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-              <Button
-                variant="contained"
-                href="https://maps.app.goo.gl/cpophxxBVvx84hpB9"
-                target="_blank"
-                color="error"
-                sx={{ mt: 2 }}
-                endIcon={<LocationOn />}
-              >
-                open in maps
-              </Button>
-            </Box>
           </Grid>
         </Grid>
       </Box>
