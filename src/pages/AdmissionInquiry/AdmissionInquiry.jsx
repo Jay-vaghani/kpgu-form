@@ -58,7 +58,6 @@ import {
 } from "./CourseList";
 import {
   FileUploadRounded,
-  LocationOn,
 } from "@mui/icons-material";
 import { useForm } from "react-hook-form";
 import axios from "axios";
