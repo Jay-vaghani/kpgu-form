@@ -54,7 +54,7 @@ export const AfterDiplomaEngineeringD2D = [
     "Diploma to Degree (D2D) Computer Science & Engineering",
     "Diploma to Degree (D2D) Computer Engineering ",
     "Diploma to Degree (D2D) Food Technology",
-    "Yet To Be Decided"
+    "Yet To Be Decided",
 ];
 
 export const AfterItiC2D = [
@@ -78,7 +78,7 @@ export const AfterGraduation = [
     "M.Tech in Electrical Engineering",
     "M.Tech in Information Technology",
     "M.Tech in Mechanical Engineering",
-    "MBA (PG)",
+    "MBA",
     "MBA(HCM & HA)",
     "M.Pharm in Pharmaceutics",
     "M.Pharm in Pharmacology",
