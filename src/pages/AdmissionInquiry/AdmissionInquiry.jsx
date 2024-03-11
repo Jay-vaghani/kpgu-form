@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import {
+  Alert,
   Autocomplete,
   Box,
   Button,
-  Checkbox,
-  FormControlLabel,
   Grid,
-  MenuItem,
-  Stack,
+  Snackbar,
   TextField,
-  Typography,
 } from "@mui/material";
 import {
   AndhraPradesh,
@@ -49,7 +46,6 @@ import {
   ArunachalPradesh,
 } from "./CityList";
 
-import toast, { Toaster } from "react-hot-toast";
 
 import {
   After10th,
@@ -61,11 +57,8 @@ import {
   Science12th,
 } from "./CourseList";
 import {
-  EmailRounded,
   FileUploadRounded,
-  LocalPhoneRounded,
   LocationOn,
-  WhatsApp,
 } from "@mui/icons-material";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -83,7 +76,18 @@ function AdmissionInquiry() {
 
   const year = new Date().getFullYear();
 
-  const StudentCategory = ["OPEN", "SEBC", "SC/ST", "OTHER"];
+  const [open, setOpen] = useState(false);
+  const [response, setResponse] = useState("")
+  const [message, setMessage] = useState("")
+
+
+  const handleAlert = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(!open);
+  };
 
   const CoursesAfter = [
     "After 10th",
@@ -275,7 +279,7 @@ function AdmissionInquiry() {
 
   const formSummit = async (FormData) => {
     setLoadingState(true);
-    const data = await axios
+    await axios
       .post(`${BackendUrl}/student/admission-inquiry`, {
         name: FormData.name,
         email: FormData.email,
@@ -289,13 +293,22 @@ function AdmissionInquiry() {
       .then((res) => {
         console.log(res);
         console.log("ok");
-        res.data.success === false ? toast.error(res.data.message) : "";
-        res.data.success === true ? toast.success(res.data.message) : "";
+        setOpen(true)
+        if (res.data.success === false) {
+          setResponse("error")
+          setMessage("Internal Server Error. Please try again or contact us via WhatsApp or phone.")
+        }
+        if (res.data.success === true) {
+          setResponse("success")
+          setMessage("Form Submitted Successfully")
+        }
+        
 
         setLoadingState(false);
         reset();
       })
       .catch((error) => {
+        setOpen(true)
         console.error(error);
         setLoadingState(false);
         reset();
@@ -321,254 +334,6 @@ function AdmissionInquiry() {
       </Box>
       <Box maxWidth={"1440px"} mx={"auto"} borderRadius={4} mt={4}>
         <Grid container spacing={3} justifyContent={"center"}>
-          {/* <Grid
-            item
-            xs={12}
-            md={5}
-            order={{
-              xs: 2,
-              md: 1,
-            }}
-          >
-            <Box
-              bgcolor={"#fff"}
-              height={`auto`}
-              p={"3%"}
-              borderRadius={4}
-              className="smooth-shadow"
-            >
-              <h2 className="display-6 fw-semibold color-secondary">
-                For Any Query{" "}
-              </h2>
-              <Grid container spacing={2} height={"100%"}>
-                <Grid item xs={12} sm={4} md={12}>
-                  <Stack
-                    direction={{
-                      xs: "column",
-                      md: "row",
-                    }}
-                    alignItems={{
-                      xs: "start",
-                      sm: "center",
-                    }}
-                    p={1}
-                    className="smooth-shadow-card"
-                    borderRadius={4}
-                  >
-                    <Box>
-                      <img
-                        src="https://res.cloudinary.com/dby2vbxv3/image/upload/v1706176937/KPGU/Images/Icon-Images/whatsapp-app.svg"
-                        width={"120px"}
-                        alt=""
-                      />
-                    </Box>
-                    <Box px={1}>
-                      <h3 className="text-success fw-semibold">WhatsApp</h3>
-                      <Stack gap={1} direction={"row"} flexWrap={"wrap"}>
-                        <Button
-                          variant="contained"
-                          color="success"
-                          startIcon={<WhatsApp />}
-                          href="https://wa.me/7861805306"
-                          target="_blank"
-                        >
-                          <Box
-                            display={{
-                              xs: "block",
-                              sm: "none",
-                            }}
-                          >
-                            <Typography variant="caption" fontSize={"inherit"}>
-                              WhatsApp 1
-                            </Typography>
-                          </Box>
-                          <Box
-                            textTransform={"lowercase"}
-                            display={{
-                              xs: "none",
-                              sm: "block",
-                            }}
-                          >
-                            <Typography variant="caption" fontSize={"inherit"}>
-                              7861805306
-                            </Typography>
-                          </Box>
-                        </Button>
-                        <Button
-                          variant="contained"
-                          color="success"
-                          startIcon={<WhatsApp />}
-                          href="https://wa.me/7861805208"
-                          target="_blank"
-                        >
-                          <Box
-                            display={{
-                              xs: "block",
-                              sm: "none",
-                            }}
-                          >
-                            <Typography variant="caption" fontSize={"inherit"}>
-                              WhatsApp 2
-                            </Typography>
-                          </Box>
-                          <Box
-                            textTransform={"lowercase"}
-                            display={{
-                              xs: "none",
-                              sm: "block",
-                            }}
-                          >
-                            <Typography variant="caption" fontSize={"inherit"}>
-                              7861805208
-                            </Typography>
-                          </Box>
-                        </Button>
-                      </Stack>
-                    </Box>
-                  </Stack>
-                </Grid>
-                <Grid item xs={12} sm={4} md={12}>
-                  <Stack
-                    direction={{
-                      xs: "column",
-                      md: "row",
-                    }}
-                    className="smooth-shadow-card"
-                    borderRadius={4}
-                    alignItems={{
-                      xs: "start",
-                      sm: "center",
-                    }}
-                    p={1}
-                  >
-                    <Box>
-                      <img
-                        src="https://res.cloudinary.com/dby2vbxv3/image/upload/v1706176937/KPGU/Images/Icon-Images/phone.svg"
-                        width={"120px"}
-                        alt=""
-                      />
-                    </Box>
-                    <Box px={1}>
-                      <h3 className="text-primary fw-semibold">Phone</h3>
-                      <Stack gap={1} direction={"row"} flexWrap={"wrap"}>
-                        <Button
-                          variant="contained"
-                          color="info"
-                          startIcon={<LocalPhoneRounded />}
-                          href="tel:7861805306"
-                          target="_blank"
-                        >
-                          <Box
-                            display={{
-                              xs: "block",
-                              sm: "none",
-                            }}
-                          >
-                            <Typography variant="caption" fontSize={"inherit"}>
-                              Phone 1
-                            </Typography>
-                          </Box>
-                          <Box
-                            textTransform={"lowercase"}
-                            display={{
-                              xs: "none",
-                              sm: "block",
-                            }}
-                          >
-                            <Typography variant="caption" fontSize={"inherit"}>
-                              7861805306
-                            </Typography>
-                          </Box>
-                        </Button>
-                        <Button
-                          variant="contained"
-                          color="info"
-                          startIcon={<LocalPhoneRounded />}
-                          href="tel:7861805208"
-                          target="_blank"
-                        >
-                          <Box
-                            display={{
-                              xs: "block",
-                              sm: "none",
-                            }}
-                          >
-                            <Typography variant="caption" fontSize={"inherit"}>
-                              Phone 2
-                            </Typography>
-                          </Box>
-                          <Box
-                            textTransform={"lowercase"}
-                            display={{
-                              xs: "none",
-                              sm: "block",
-                            }}
-                          >
-                            <Typography variant="caption" fontSize={"inherit"}>
-                              7861805208
-                            </Typography>
-                          </Box>
-                        </Button>
-                      </Stack>
-                    </Box>
-                  </Stack>
-                </Grid>
-                <Grid item xs={12} sm={4} md={12}>
-                  <Stack
-                    direction={{
-                      xs: "column",
-                      md: "row",
-                    }}
-                    alignItems={{
-                      xs: "start",
-                      sm: "center",
-                    }}
-                    p={1}
-                    className="smooth-shadow-card"
-                    borderRadius={4}
-                    height={"100%"}
-                  >
-                    <Box>
-                      <img
-                        src="https://res.cloudinary.com/dby2vbxv3/image/upload/v1706176937/KPGU/Images/Icon-Images/gmail.svg"
-                        width={"120px"}
-                        alt=""
-                      />
-                    </Box>
-                    <Box px={1}>
-                      <h3 className="text-danger fw-semibold">Email</h3>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        startIcon={<EmailRounded />}
-                        href="mailto:admission@kpgu.ac.in"
-                        target="_blank"
-                      >
-                        <Box
-                          display={{
-                            xs: "block",
-                            sm: "none",
-                          }}
-                        >
-                          Email
-                        </Box>
-                        <Box
-                          textTransform={"lowercase"}
-                          display={{
-                            xs: "none",
-                            sm: "block",
-                          }}
-                        >
-                          admission@kpgu.ac.in
-                        </Box>
-                      </Button>
-                    </Box>
-                  </Stack>
-                </Grid>
-              </Grid>
-            </Box>
-          </Grid> */}
-
           <Grid
             item
             xs={12}
@@ -783,7 +548,7 @@ function AdmissionInquiry() {
                         name="courseSelected"
                       />
                     </Box>
-                    <h5 className="color-secondary fw-bold "> <FormControlLabel className="fw-bold" required control={<Checkbox />} sx={{fontWeight: 900}} label="I Allow KPGU To Contact Me." /></h5>
+                    <h5 className="color-secondary fw-bold ">I Allow KPGU To Contact Me.</h5>
                   </Grid>
                   <Grid item xs={12}>
                     <LoadingButton
@@ -834,7 +599,17 @@ function AdmissionInquiry() {
         </Grid>
       </Box>
 
-      <Toaster />
+      {/* <Toaster position=""/> */}
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleAlert} anchorOrigin={{ vertical: "top", horizontal: "right" }}>
+        <Alert
+          onClose={handleAlert}
+          severity={response}
+          variant="filled"
+          sx={{ width: '100%' }}
+        >
+          {message}
+        </Alert>
+      </Snackbar>
     </>
   );
 }
